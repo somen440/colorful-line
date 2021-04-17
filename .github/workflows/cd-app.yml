@@ -22,6 +22,16 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
+      - name: setup
+        working-directory: app/ColorfulLine
+        run: make setup
+      - uses: actions/cache@v1.0.3
+        working-directory: app/ColorfulLine
+        with:
+          path: local
+          key: perl-${{ hashFiles('**/cpanfile') }}
+          restore-keys: |
+            perl-
       - name: Build, tag, and push image to Amazon ECR
         working-directory: app
         env:
