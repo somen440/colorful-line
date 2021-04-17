@@ -21,7 +21,8 @@ export class InfraStack extends cdk.Stack {
     securityGroup.addIngressRule(ec2.Peer.anyIpv4(), ec2.Port.tcp(80));
 
     const repository = new ecr.Repository(this, 'colorful-line', {
-      repositoryName: 'colorful-line'
+      repositoryName: 'colorful-line',
+      lifecycleRules: [{ maxImageCount: 10 }]
     });
 
     const cluster = new ecs.Cluster(this, 'ColorfulLineCluster', {
