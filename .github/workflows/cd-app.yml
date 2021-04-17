@@ -40,6 +40,7 @@ jobs:
         run: |
           docker build -f Dockerfile.release -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
   notice_success:
     if: success()
