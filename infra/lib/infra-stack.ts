@@ -8,6 +8,8 @@ export class InfraStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
+    const tag = process.env.IMAGE_TAG || 'latest';
+
     const cidr = '10.0.0.0/16';
     const vpc = new ec2.Vpc(this, 'VPC', {
       cidr,
@@ -35,7 +37,7 @@ export class InfraStack extends cdk.Stack {
       cpu: 256
     });
     fargateTaskDefinition.addContainer('AppContainer', {
-      image: ecs.ContainerImage.fromEcrRepository(repository),
+      image: ecs.ContainerImage.fromEcrRepository(repository, tag),
       portMappings: [{ containerPort: 5000 }]
     });
 

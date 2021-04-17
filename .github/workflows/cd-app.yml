@@ -19,6 +19,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-northeast-1
+
+      # to ECR
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
@@ -38,10 +40,26 @@ jobs:
           ECR_REPOSITORY: colorful-line
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -f Dockerfile.release -t $ECR_REGISTRY/$ECR_REPOSITORY .
-          docker tag $ECR_REGISTRY/$ECR_REPOSITORY:latest $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build -f Dockerfile.release -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+
+      # to ECS Fargate
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - run: npm install
+        working-directory: infra
+      - run: npm run build
+        working-directory: infra
+      - run: cdk deploy -f
+        working-directory: infra
+        env:
+          ECR_TAG: ${{ github.sha }}
+          AWS_DEFAULT_REGION: 'ap-northeast-1'
+          CDK_DEFAULT_REGION: 'ap-northeast-1'
+          CDK_DEFAULT_ACCOUNT: ${{ secrets.AWS_ACCOUNT }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   notice_success:
     if: success()
