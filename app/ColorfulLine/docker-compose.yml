@@ -1,5 +1,11 @@
 version: "3.7"
 services:
+  setup:
+    container_name: setup
+    image: satoya2041/perl:v0.0.2
+    volumes:
+      - ./:/app
+    command: ["carton", "install"]
   app:
     container_name: app
     image: satoya2041/perl:v0.0.2
