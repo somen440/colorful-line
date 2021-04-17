@@ -1,0 +1,12 @@
+FROM satoya2041/perl:v0.0.2
+
+WORKDIR /app
+
+RUN useradd -m -u 1000 appuser
+USER appuser
+
+COPY ./ColorfulLine /app
+
+EXPOSE 5000
+
+CMD [ "carton", "exec", "perl", "-Ilib", "script/colorfulline-server" ]

@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  app:
+    container_name: app
+    image: satoya2041/perl:v0.0.2
+    volumes:
+      - ./:/app
+    ports:
+      - "5000:5000"
+    command: ["carton", "exec", "perl", "-Ilib", "script/colorfulline-server"]
