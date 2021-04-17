@@ -35,7 +35,7 @@ export class InfraStack extends cdk.Stack {
       cpu: 256
     });
     fargateTaskDefinition.addContainer('AppContainer', {
-      image: ecs.ContainerImage.fromEcrRepository(repository, 'd4602248bcbe64022263e178dffacbed8b92bfa0'),
+      image: ecs.ContainerImage.fromEcrRepository(repository),
       portMappings: [{ containerPort: 5000 }]
     });
 
