@@ -26,10 +26,9 @@ jobs:
         working-directory: app/ColorfulLine
         run: make setup
       - uses: actions/cache@v1.0.3
-        working-directory: app/ColorfulLine
         with:
-          path: local
-          key: perl-${{ hashFiles('**/cpanfile') }}
+          path: app/ColorfulLine/local
+          key: perl-${{ hashFiles('app/ColorfulLine/**/cpanfile') }}
           restore-keys: |
             perl-
       - name: Build, tag, and push image to Amazon ECR
