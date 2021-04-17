@@ -22,7 +22,8 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
-      - uses: actions/cache@v1.0.3
+      - name: Perl Cache (App)
+        uses: actions/cache@v2
         with:
           path: app/ColorfulLine/local
           key: perl-${{ hashFiles('app/ColorfulLine/**/cpanfile') }}
@@ -45,7 +46,8 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - uses: actions/cache@v2
+      - name: Node Cache (Infra)
+        uses: actions/cache@v2
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
