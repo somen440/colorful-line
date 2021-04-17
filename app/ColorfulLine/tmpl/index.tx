@@ -2,7 +2,7 @@
 
 : override content -> {
 
-<h1 style="padding: 70px; text-align: center; font-size: 80px; line-height: 1; letter-spacing: -2px;">Hello, Amon2 world!</h1>
+<h1 style="padding: 70px; text-align: center; font-size: 80px; line-height: 1; letter-spacing: -2px;">Hoge, Amon2 world!</h1>
 
 <hr />
 
@@ -90,6 +90,6 @@
 <form method="post" action="/reset_counter">
     <input type="submit" name="Reset counter." class="btn btn-default">
 </form>
-     
+
 
 : }
