@@ -1,0 +1,22 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+<h1 style="padding: 70px; text-align: center; font-size: 80px; line-height: 1; letter-spacing: -2px;">Profile</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>ユーザー名</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><: $user_id :></td>
+      <td><: $user_name :></td>
+    <tr>
+  </tbody>
+</table>
+
+: }

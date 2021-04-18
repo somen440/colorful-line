@@ -22,3 +22,11 @@ setup:
 .PHONY: ps
 ps:
 	${dc} ps
+
+.PHONY: tail
+tail:
+	${dc} logs -f app
+
+.PHONY: restart
+restart:
+	${dc} restart app
