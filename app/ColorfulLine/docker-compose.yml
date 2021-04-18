@@ -14,3 +14,19 @@ services:
     ports:
       - "5000:5000"
     command: ["carton", "exec", "perl", "-Ilib", "script/colorfulline-server"]
+  db:
+    image: mysql:5.7
+    ports:
+      - 30300:3306
+    volumes:
+      - ../../build/mysql/conf.d:/etc/mysql/conf.d
+      - ./log/mysql:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      MYSQL_DATABASE: colorful
+      TZ: Asia/Tokyo
+  wait:
+    image: jwilder/dockerize
+    command: ["dockerize", "-wait", "tcp://db:3306", "-timeout", "30s"]
