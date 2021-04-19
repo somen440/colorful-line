@@ -50,12 +50,7 @@ jobs:
             --platform=managed \
             --allow-unauthenticated \
             --port=5000 \
-            --set-env-vars=\
-              DB_NAME=colorful,\
-              DB_HOST=$DB_HOST,\
-              DB_PORT=$DB_PORT,\
-              DB_USER=$DB_USER,\
-              DB_PASSWORD=$DB_PASSWORD \
+            --set-env-vars=DB_NAME=colorful,DB_HOST=$DB_HOST,DB_PORT=$DB_PORT,DB_USER=$DB_USER,DB_PASSWORD=$DB_PASSWORD \
             --quiet
         env:
           DB_HOST: ${{ secrets.DB_HOST }}
