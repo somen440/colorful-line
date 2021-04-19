@@ -6,7 +6,9 @@ use Amon2::Web::Dispatcher::RouterBoom;
 
 any '/' => sub {
     my ($c) = @_;
-    return $c->render('index.tx');
+    return $c->render('index.tx', {
+        text => 'hello',
+    });
 };
 
 get '/user' => sub {

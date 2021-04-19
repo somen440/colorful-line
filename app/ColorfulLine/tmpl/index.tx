@@ -4,4 +4,6 @@
 
 <h1 style="padding: 70px; text-align: center; font-size: 80px; line-height: 1; letter-spacing: -2px;">Dashboard</h1>
 
+<p><: $text :></p>
+
 : }

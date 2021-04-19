@@ -13,7 +13,7 @@ services:
       - ./:/app
     ports:
       - "5000:5000"
-    command: ["carton", "exec", "perl", "-Ilib", "script/colorfulline-server"]
+    command: ["carton", "exec", "--", "plackup", "-Ilib", "-R", "./lib", "--access-log", "/dev/null", "-a", "script/colorfulline-server"]
   db:
     image: mysql:5.7
     ports:
