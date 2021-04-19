@@ -11,61 +11,61 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-northeast-1
+      # - name: Configure AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: ap-northeast-1
 
       # to ECR
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
-      - name: Perl Cache (App)
-        uses: actions/cache@v2
-        with:
-          path: app/ColorfulLine/local
-          key: perl-${{ hashFiles('app/ColorfulLine/**/cpanfile') }}
-          restore-keys: |
-            perl-
-      - name: setup
-        working-directory: app/ColorfulLine
-        run: make setup
-      - name: Build, tag, and push image to Amazon ECR
-        working-directory: app
-        env:
-          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: colorful-line
-          IMAGE_TAG: ${{ github.sha }}
-        run: |
-          docker build -f Dockerfile.release -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+      # - name: Login to Amazon ECR
+      #   id: login-ecr
+      #   uses: aws-actions/amazon-ecr-login@v1
+      # - name: Perl Cache (App)
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: app/ColorfulLine/local
+      #     key: perl-${{ hashFiles('app/ColorfulLine/**/cpanfile') }}
+      #     restore-keys: |
+      #       perl-
+      # - name: setup
+      #   working-directory: app/ColorfulLine
+      #   run: make setup
+      # - name: Build, tag, and push image to Amazon ECR
+      #   working-directory: app
+      #   env:
+      #     ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+      #     ECR_REPOSITORY: colorful-line
+      #     IMAGE_TAG: ${{ github.sha }}
+      #   run: |
+      #     docker build -f Dockerfile.release -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+      #     docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
       # to ECS Fargate
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - name: Node Cache (Infra)
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: npm install
-        working-directory: infra
-      - run: npm run build
-        working-directory: infra
-      - run: npm run cdk -- deploy -f
-        working-directory: infra
-        env:
-          ECR_TAG: ${{ github.sha }}
-          AWS_DEFAULT_REGION: 'ap-northeast-1'
-          CDK_DEFAULT_REGION: 'ap-northeast-1'
-          CDK_DEFAULT_ACCOUNT: ${{ secrets.AWS_ACCOUNT }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      # - uses: actions/setup-node@v2
+      #   with:
+      #     node-version: '14'
+      # - name: Node Cache (Infra)
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-node-
+      # - run: npm install
+      #   working-directory: infra
+      # - run: npm run build
+      #   working-directory: infra
+      # - run: npm run cdk -- deploy -f
+      #   working-directory: infra
+      #   env:
+      #     ECR_TAG: ${{ github.sha }}
+      #     AWS_DEFAULT_REGION: 'ap-northeast-1'
+      #     CDK_DEFAULT_REGION: 'ap-northeast-1'
+      #     CDK_DEFAULT_ACCOUNT: ${{ secrets.AWS_ACCOUNT }}
+      #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      #     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
   notice_success:
     if: success()
