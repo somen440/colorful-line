@@ -1,12 +1,14 @@
-use File::Spec;
-use File::Basename qw(dirname);
-my $basedir = File::Spec->rel2abs(File::Spec->catdir(dirname(__FILE__), '..'));
-my $dbpath = File::Spec->catfile($basedir, 'db', 'development.db');
+my $db = $ENV{DB_NAME};
+my $host = $ENV{DB_HOST};
+my $port = $ENV{DB_PORT};
+my $user = $ENV{DB_USER};
+my $password = $ENV{DB_PASSWORD};
+
 +{
     'DBI' => [
-        "dbi:SQLite:dbname=$dbpath", '', '',
+        "dbi:mysql:dbname=${db};host=${host};port=${port}", $user, $password,
         +{
-            sqlite_unicode => 1,
+            mysql_enable_utf8 => 1,
         }
     ],
 };

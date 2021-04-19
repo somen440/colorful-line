@@ -17,3 +17,4 @@ MYMETA.yml
 /.carton/
 log
 .idea
+dbconfig.yml

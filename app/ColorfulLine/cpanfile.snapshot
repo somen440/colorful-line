@@ -1,5 +1,12 @@
 # carton snapshot format: version 1.0
 DISTRIBUTIONS
+  Algorithm-Diff-1.201
+    pathname: R/RJ/RJBS/Algorithm-Diff-1.201.tar.gz
+    provides:
+      Algorithm::Diff 1.201
+      Algorithm::Diff::_impl 1.201
+    requirements:
+      ExtUtils::MakeMaker 0
   Amon2-6.15
     pathname: T/TO/TOKUHIROM/Amon2-6.15.tar.gz
     provides:
@@ -72,6 +79,55 @@ DISTRIBUTIONS
       mro 0
       parent 0.223
       perl 5.010000
+  Amon2-DBI-0.33
+    pathname: T/TO/TOKUHIROM/Amon2-DBI-0.33.tar.gz
+    provides:
+      Amon2::DBI 0.33
+      Amon2::DBI::db undef
+      Amon2::DBI::dr undef
+      Amon2::DBI::st undef
+      Amon2::Plugin::DBI undef
+    requirements:
+      Carp::Clan 0
+      DBI 1.616
+      DBIx::TransactionManager 1.09
+      ExtUtils::MakeMaker 6.59
+      Module::Build 0.38
+      SQL::Interp 1.10
+      Test::More 0.98
+      Test::Requires 0
+      parent 0
+      perl 5.008001
+  Anego-0.02
+    pathname: P/PA/PAPIX/Anego-0.02.tar.gz
+    provides:
+      Anego 0.02
+      Anego::CLI undef
+      Anego::CLI::Diff undef
+      Anego::CLI::Help undef
+      Anego::CLI::Migrate undef
+      Anego::CLI::Status undef
+      Anego::CLI::Version undef
+      Anego::Config undef
+      Anego::Git undef
+      Anego::Logger undef
+      Anego::Task::Diff undef
+      Anego::Task::GitLog undef
+      Anego::Task::SchemaLoader undef
+      Anego::Util undef
+    requirements:
+      DBI 0
+      DBIx::Schema::DSL 0
+      Digest::MD5 0
+      Exporter 0
+      File::Spec 0
+      Getopt::Long 0
+      Git::Repository 0
+      Module::Build::Tiny 0.035
+      SQL::Translator 0
+      Term::ANSIColor 0
+      Try::Tiny 0
+      perl 5.008001
   Apache-LogFormat-Compiler-0.36
     pathname: K/KA/KAZEBURO/Apache-LogFormat-Compiler-0.36.tar.gz
     provides:
@@ -82,6 +138,18 @@ DISTRIBUTIONS
       POSIX::strftime::Compiler 0.30
       Time::Local 0
       perl 5.008001
+  Array-Diff-0.09
+    pathname: N/NE/NEILB/Array-Diff-0.09.tar.gz
+    provides:
+      Array::Diff 0.09
+    requirements:
+      Algorithm::Diff 1.19
+      Class::Accessor::Fast 0
+      ExtUtils::MakeMaker 0
+      base 0
+      perl 5.008
+      strict 0
+      warnings 0
   B-Hooks-EndOfScope-0.24
     pathname: E/ET/ETHER/B-Hooks-EndOfScope-0.24.tar.gz
     provides:
@@ -164,6 +232,15 @@ DISTRIBUTIONS
       Scalar::Util 0
       Test::Exception 0
       Test::More 0.18
+  Carp-Clan-6.08
+    pathname: E/ET/ETHER/Carp-Clan-6.08.tar.gz
+    provides:
+      Carp::Clan 6.08
+    requirements:
+      ExtUtils::MakeMaker 0
+      overload 0
+      perl 5.006
+      strict 0
   Class-Accessor-0.51
     pathname: K/KA/KASEI/Class-Accessor-0.51.tar.gz
     provides:
@@ -244,6 +321,12 @@ DISTRIBUTIONS
       perl 5.008001
       strict 0
       warnings 0
+  Clone-0.45
+    pathname: A/AT/ATOOMIC/Clone-0.45.tar.gz
+    provides:
+      Clone 0.45
+    requirements:
+      ExtUtils::MakeMaker 0
   Cookie-Baker-0.11
     pathname: K/KA/KAZEBURO/Cookie-Baker-0.11.tar.gz
     provides:
@@ -452,6 +535,21 @@ DISTRIBUTIONS
       Test::More 0.88
       Tie::Hash 0
       perl 5.006
+  DBD-mysql-4.050
+    pathname: D/DV/DVEEDEN/DBD-mysql-4.050.tar.gz
+    provides:
+      Bundle::DBD::mysql 4.050
+      DBD::mysql 4.050
+      DBD::mysql::GetInfo undef
+      DBD::mysql::db 4.050
+      DBD::mysql::dr 4.050
+      DBD::mysql::st 4.050
+    requirements:
+      DBI 1.609
+      Data::Dumper 0
+      Devel::CheckLib 1.09
+      ExtUtils::MakeMaker 0
+      perl 5.008001
   DBI-1.643
     pathname: T/TI/TIMB/DBI-1.643.tar.gz
     provides:
@@ -579,6 +677,18 @@ DISTRIBUTIONS
       Module::Build 0.38
       Module::Load 0
       perl 5.008001
+  DBIx-Schema-DSL-1.0000
+    pathname: S/SO/SONGMU/DBIx-Schema-DSL-1.0000.tar.gz
+    provides:
+      DBIx::Schema::DSL 1.0000
+      DBIx::Schema::DSL::Context undef
+    requirements:
+      Array::Diff 0
+      Clone 0.06
+      Module::Build::Tiny 0.035
+      Moo 1.000003
+      SQL::Translator 0.11019
+      perl 5.008005
   DBIx-TransactionManager-1.13
     pathname: N/NE/NEKOKAK/DBIx-TransactionManager-1.13.tar.gz
     provides:
@@ -624,6 +734,15 @@ DISTRIBUTIONS
       integer 0
       perl 5.006
       strict 0
+  Data-Page-Navigation-0.07
+    pathname: K/KA/KAZEBURO/Data-Page-Navigation-0.07.tar.gz
+    provides:
+      Data::Page::Navigation 0.07
+    requirements:
+      Data::Page 2
+      ExtUtils::MakeMaker 0
+      Module::Build::Tiny 0.035
+      Test::More 0
   Data-Page-NoTotalEntries-0.02
     pathname: T/TO/TOKUHIROM/Data-Page-NoTotalEntries-0.02.tar.gz
     provides:
@@ -1106,6 +1225,16 @@ DISTRIBUTIONS
       Test::More 0.98
       parent 0
       perl 5.008001
+  Devel-CheckLib-1.14
+    pathname: M/MA/MATTN/Devel-CheckLib-1.14.tar.gz
+    provides:
+      Devel::CheckLib 1.14
+    requirements:
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      File::Temp 0.16
+      perl 5.00405
   Devel-StackTrace-2.04
     pathname: D/DR/DROLSKY/Devel-StackTrace-2.04.tar.gz
     provides:
@@ -1126,6 +1255,16 @@ DISTRIBUTIONS
     requirements:
       Devel::StackTrace 0
       ExtUtils::MakeMaker 0
+  Devel-Symdump-2.18
+    pathname: A/AN/ANDK/Devel-Symdump-2.18.tar.gz
+    provides:
+      Devel::Symdump 2.18
+      Devel::Symdump::Export undef
+    requirements:
+      Compress::Zlib 0
+      ExtUtils::MakeMaker 0
+      Test::More 0
+      perl 5.004
   Digest-HMAC-1.04
     pathname: A/AR/ARODLAND/Digest-HMAC-1.04.tar.gz
     provides:
@@ -1317,6 +1456,41 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       perl 5.008001
+  Git-Repository-1.324
+    pathname: B/BO/BOOK/Git-Repository-1.324.tar.gz
+    provides:
+      Git::Repository 1.324
+      Git::Repository::Command 1.324
+      Git::Repository::Plugin 1.324
+      Test::Git 1.324
+    requirements:
+      Carp 0
+      Cwd 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      File::Spec::Functions 0
+      File::Temp 0
+      Git::Version::Compare 1.001
+      IO::Handle 0
+      Scalar::Util 0
+      System::Command 1.118
+      Test::Builder 0
+      namespace::clean 0
+      perl 5.006
+      strict 0
+      warnings 0
+  Git-Version-Compare-1.004
+    pathname: B/BO/BOOK/Git-Version-Compare-1.004.tar.gz
+    provides:
+      Git::Version::Compare 1.004
+    requirements:
+      Carp 0
+      Exporter 0
+      ExtUtils::MakeMaker 0
+      perl 5.006
+      strict 0
+      warnings 0
   HTML-FillInForm-Lite-1.15
     pathname: G/GF/GFUJI/HTML-FillInForm-Lite-1.15.tar.gz
     provides:
@@ -1559,12 +1733,35 @@ DISTRIBUTIONS
       Exporter 5.57
       ExtUtils::MakeMaker 0
       perl 5.008
+  IPC-Run-20200505.0
+    pathname: T/TO/TODDR/IPC-Run-20200505.0.tar.gz
+    provides:
+      IPC::Run 20200505.0
+      IPC::Run::Debug 20200505.0
+      IPC::Run::IO 20200505.0
+      IPC::Run::Timer 20200505.0
+      IPC::Run::Win32Helper 20200505.0
+      IPC::Run::Win32IO 20200505.0
+      IPC::Run::Win32Pump 20200505.0
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0.47
   IPC-Signal-1.00
     pathname: R/RO/ROSCH/IPC-Signal-1.00.tar.gz
     provides:
       IPC::Signal 1.00
     requirements:
       ExtUtils::MakeMaker 0
+  Import-Into-1.002005
+    pathname: H/HA/HAARG/Import-Into-1.002005.tar.gz
+    provides:
+      Import::Into 1.002005
+    requirements:
+      ExtUtils::MakeMaker 0
+      Module::Runtime 0
+      perl 5.006
+      strict 0
+      warnings 0
   JSON-4.03
     pathname: I/IS/ISHIGAKI/JSON-4.03.tar.gz
     provides:
@@ -1619,6 +1816,18 @@ DISTRIBUTIONS
       IPC::Cmd 0
       XSLoader 0.22
       base 0
+  Log-Minimal-0.19
+    pathname: K/KA/KAZEBURO/Log-Minimal-0.19.tar.gz
+    provides:
+      Log::Minimal 0.19
+    requirements:
+      CPAN::Meta 0
+      CPAN::Meta::Prereqs 0
+      Data::Dumper 0
+      ExtUtils::CBuilder 0
+      Module::Build 0.38
+      Scalar::Util 0
+      Term::ANSIColor 0
   MRO-Compat-0.13
     pathname: H/HA/HAARG/MRO-Compat-0.13.tar.gz
     provides:
@@ -1626,6 +1835,21 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 0
       perl 5.006
+  Mixin-Linewise-0.108
+    pathname: R/RJ/RJBS/Mixin-Linewise-0.108.tar.gz
+    provides:
+      Mixin::Linewise 0.108
+      Mixin::Linewise::Readers 0.108
+      Mixin::Linewise::Writers 0.108
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 0
+      IO::File 0
+      PerlIO::utf8_strict 0
+      Sub::Exporter 0
+      perl 5.008001
+      strict 0
+      warnings 0
   Module-Build-0.4231
     pathname: L/LE/LEONT/Module-Build-0.4231.tar.gz
     provides:
@@ -1882,6 +2106,16 @@ DISTRIBUTIONS
       perl 5.008001
       strict 0
       warnings 0
+  Package-Variant-1.003002
+    pathname: M/MS/MSTROUT/Package-Variant-1.003002.tar.gz
+    provides:
+      Package::Variant 1.003002
+    requirements:
+      Carp 0
+      Import::Into 1.000000
+      Module::Runtime 0.013
+      perl 5.006
+      strictures 2.000000
   Parallel-Prefork-0.18
     pathname: K/KA/KAZUHO/Parallel-Prefork-0.18.tar.gz
     provides:
@@ -1930,6 +2164,40 @@ DISTRIBUTIONS
       List::Util 1.29
       Scalar::Util 0
       overload 0
+      strict 0
+      warnings 0
+  Parse-RecDescent-1.967015
+    pathname: J/JT/JTBRAUN/Parse-RecDescent-1.967015.tar.gz
+    provides:
+      Parse::RecDescent 1.967015
+      Parse::RecDescent::Action 1.967015
+      Parse::RecDescent::ColCounter 1.967015
+      Parse::RecDescent::Directive 1.967015
+      Parse::RecDescent::Error 1.967015
+      Parse::RecDescent::Expectation 1.967015
+      Parse::RecDescent::InterpLit 1.967015
+      Parse::RecDescent::LineCounter 1.967015
+      Parse::RecDescent::Literal 1.967015
+      Parse::RecDescent::OffsetCounter 1.967015
+      Parse::RecDescent::Operator 1.967015
+      Parse::RecDescent::Production 1.967015
+      Parse::RecDescent::Repetition 1.967015
+      Parse::RecDescent::Result 1.967015
+      Parse::RecDescent::Rule 1.967015
+      Parse::RecDescent::Subrule 1.967015
+      Parse::RecDescent::Token 1.967015
+      Parse::RecDescent::UncondReject 1.967015
+    requirements:
+      Test::More 0
+      Text::Balanced 1.95
+  PerlIO-utf8_strict-0.008
+    pathname: L/LE/LEONT/PerlIO-utf8_strict-0.008.tar.gz
+    provides:
+      PerlIO::utf8_strict 0.008
+    requirements:
+      ExtUtils::MakeMaker 0
+      XSLoader 0
+      perl 5.008
       strict 0
       warnings 0
   Plack-1.0048
@@ -2063,6 +2331,65 @@ DISTRIBUTIONS
       Digest::SHA 0
       Module::Build::Tiny 0.034
       Plack 0.9910
+  Pod-Coverage-0.23
+    pathname: R/RC/RCLAMP/Pod-Coverage-0.23.tar.gz
+    provides:
+      Pod::Coverage 0.23
+      Pod::Coverage::CountParents undef
+      Pod::Coverage::ExportOnly undef
+      Pod::Coverage::Extractor 0.23
+      Pod::Coverage::Overloader undef
+    requirements:
+      Devel::Symdump 2.01
+      ExtUtils::MakeMaker 0
+      Pod::Find 0.21
+      Pod::Parser 1.13
+      Test::More 0
+  Pod-Coverage-TrustPod-0.100005
+    pathname: R/RJ/RJBS/Pod-Coverage-TrustPod-0.100005.tar.gz
+    provides:
+      Pod::Coverage::TrustPod 0.100005
+    requirements:
+      ExtUtils::MakeMaker 0
+      Pod::Coverage::CountParents 0
+      Pod::Eventual::Simple 0
+      Pod::Find 0
+      base 0
+      strict 0
+      warnings 0
+  Pod-Eventual-0.094001
+    pathname: R/RJ/RJBS/Pod-Eventual-0.094001.tar.gz
+    provides:
+      Pod::Eventual 0.094001
+      Pod::Eventual::Simple 0.094001
+    requirements:
+      Carp 0
+      ExtUtils::MakeMaker 6.30
+      Mixin::Linewise::Readers 0.102
+      strict 0
+      warnings 0
+  Pod-Parser-1.63
+    pathname: M/MA/MAREKR/Pod-Parser-1.63.tar.gz
+    provides:
+      Pod::Cache 1.63
+      Pod::Cache::Item 1.63
+      Pod::Find 1.63
+      Pod::Hyperlink 1.63
+      Pod::InputObjects 1.63
+      Pod::InputSource 1.63
+      Pod::InteriorSequence 1.63
+      Pod::List 1.63
+      Pod::Paragraph 1.63
+      Pod::ParseTree 1.63
+      Pod::ParseUtils 1.63
+      Pod::Parser 1.63
+      Pod::PlainText 2.07
+      Pod::Select 1.63
+    requirements:
+      Cwd 0
+      ExtUtils::MakeMaker 0
+      File::Basename 0
+      Test::More 0.6
   Proc-Wait3-0.05
     pathname: C/CT/CTILMES/Proc-Wait3-0.05.tar.gz
     provides:
@@ -2087,6 +2414,19 @@ DISTRIBUTIONS
       Class::Accessor::Lite 0.05
       Module::Build::Tiny 0.035
       perl 5.008005
+  SQL-Interp-1.27
+    pathname: Y/YO/YORHEL/SQL-Interp-1.27.tar.gz
+    provides:
+      DBIx::Interp 1.27
+      DBIx::Interp::STX undef
+      DBIx::Interp::db undef
+      SQL::Interp 1.27
+      SQL::Interp::SQL undef
+      SQL::Interp::Variable undef
+    requirements:
+      DBI 1
+      Module::Build 0.38
+      perl v5.8.0
   SQL-Maker-1.21
     pathname: T/TO/TOKUHIROM/SQL-Maker-1.21.tar.gz
     provides:
@@ -2119,6 +2459,104 @@ DISTRIBUTIONS
       Test::More 0.98
       Test::Requires 0
       Tie::IxHash 0
+      perl 5.008001
+  SQL-Translator-1.62
+    pathname: I/IL/ILMARI/SQL-Translator-1.62.tar.gz
+    provides:
+      Parse::RecDescent::SQL::Translator::Parser::DB2::Grammar undef
+      SQL::Translator 1.62
+      SQL::Translator::Diff undef
+      SQL::Translator::Filter::DefaultExtra 1.62
+      SQL::Translator::Filter::Globals 1.62
+      SQL::Translator::Filter::Names 1.62
+      SQL::Translator::Generator::DDL::MySQL undef
+      SQL::Translator::Generator::DDL::PostgreSQL undef
+      SQL::Translator::Generator::DDL::SQLServer undef
+      SQL::Translator::Generator::DDL::SQLite undef
+      SQL::Translator::Generator::Role::DDL undef
+      SQL::Translator::Generator::Role::Quote undef
+      SQL::Translator::Parser 1.62
+      SQL::Translator::Parser::Access 1.62
+      SQL::Translator::Parser::DB2 undef
+      SQL::Translator::Parser::DB2::Grammar undef
+      SQL::Translator::Parser::DBI 1.62
+      SQL::Translator::Parser::DBI::DB2 undef
+      SQL::Translator::Parser::DBI::MySQL 1.62
+      SQL::Translator::Parser::DBI::Oracle 1.62
+      SQL::Translator::Parser::DBI::PostgreSQL 1.62
+      SQL::Translator::Parser::DBI::SQLServer 1.62
+      SQL::Translator::Parser::DBI::SQLite 1.62
+      SQL::Translator::Parser::DBI::Sybase 1.62
+      SQL::Translator::Parser::Excel 1.62
+      SQL::Translator::Parser::JSON 1.62
+      SQL::Translator::Parser::MySQL 1.62
+      SQL::Translator::Parser::Oracle 1.62
+      SQL::Translator::Parser::PostgreSQL 1.62
+      SQL::Translator::Parser::SQLServer 1.62
+      SQL::Translator::Parser::SQLite 1.62
+      SQL::Translator::Parser::Storable 1.62
+      SQL::Translator::Parser::Sybase 1.62
+      SQL::Translator::Parser::XML 1.62
+      SQL::Translator::Parser::XML::SQLFairy 1.62
+      SQL::Translator::Parser::YAML 1.62
+      SQL::Translator::Parser::xSV 1.62
+      SQL::Translator::Producer 1.62
+      SQL::Translator::Producer::ClassDBI 1.62
+      SQL::Translator::Producer::DB2 1.62
+      SQL::Translator::Producer::DiaUml 1.62
+      SQL::Translator::Producer::Diagram 1.62
+      SQL::Translator::Producer::Dumper 1.62
+      SQL::Translator::Producer::GraphViz 1.62
+      SQL::Translator::Producer::HTML 1.62
+      SQL::Translator::Producer::JSON 1.62
+      SQL::Translator::Producer::Latex 1.62
+      SQL::Translator::Producer::MySQL 1.62
+      SQL::Translator::Producer::Oracle 1.62
+      SQL::Translator::Producer::POD 1.62
+      SQL::Translator::Producer::PostgreSQL 1.62
+      SQL::Translator::Producer::SQLServer 1.62
+      SQL::Translator::Producer::SQLite 1.62
+      SQL::Translator::Producer::Storable 1.62
+      SQL::Translator::Producer::Sybase 1.62
+      SQL::Translator::Producer::TT::Base 1.62
+      SQL::Translator::Producer::TT::Table 1.62
+      SQL::Translator::Producer::TTSchema 1.62
+      SQL::Translator::Producer::XML 1.62
+      SQL::Translator::Producer::XML::SQLFairy 1.62
+      SQL::Translator::Producer::YAML 1.62
+      SQL::Translator::Role::BuildArgs undef
+      SQL::Translator::Role::Debug undef
+      SQL::Translator::Role::Error undef
+      SQL::Translator::Role::ListAttr undef
+      SQL::Translator::Schema 1.62
+      SQL::Translator::Schema::Constants 1.62
+      SQL::Translator::Schema::Constraint 1.62
+      SQL::Translator::Schema::Field 1.62
+      SQL::Translator::Schema::Index 1.62
+      SQL::Translator::Schema::Object 1.62
+      SQL::Translator::Schema::Procedure 1.62
+      SQL::Translator::Schema::Role::Compare undef
+      SQL::Translator::Schema::Role::Extra undef
+      SQL::Translator::Schema::Table 1.62
+      SQL::Translator::Schema::Trigger 1.62
+      SQL::Translator::Schema::View 1.62
+      SQL::Translator::Types undef
+      SQL::Translator::Utils 1.62
+      SQL::Translator::Utils::Error 1.62
+      Test::SQL::Translator 1.62
+    requirements:
+      Carp::Clan 0
+      DBI 1.54
+      Digest::SHA 0
+      ExtUtils::MakeMaker 6.54
+      File::ShareDir 1.0
+      File::ShareDir::Install 0
+      Moo 1.000003
+      Package::Variant 1.001001
+      Parse::RecDescent 1.967009
+      Scalar::Util 0
+      Sub::Quote 0
+      Try::Tiny 0.04
       perl 5.008001
   Scope-Guard-0.21
     pathname: C/CH/CHOCOLATE/Scope-Guard-0.21.tar.gz
@@ -2243,6 +2681,19 @@ DISTRIBUTIONS
     requirements:
       ExtUtils::MakeMaker 6.30
       IO::File 1.14
+  Sub-Exporter-0.987
+    pathname: R/RJ/RJBS/Sub-Exporter-0.987.tar.gz
+    provides:
+      Sub::Exporter 0.987
+      Sub::Exporter::Util 0.987
+    requirements:
+      Carp 0
+      Data::OptList 0.100
+      ExtUtils::MakeMaker 6.30
+      Params::Util 0.14
+      Sub::Install 0.92
+      strict 0
+      warnings 0
   Sub-Exporter-Progressive-0.001013
     pathname: F/FR/FREW/Sub-Exporter-Progressive-0.001013.tar.gz
     provides:
@@ -2287,6 +2738,32 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  System-Command-1.121
+    pathname: B/BO/BOOK/System-Command-1.121.tar.gz
+    provides:
+      System::Command 1.121
+      System::Command::Reaper 1.121
+    requirements:
+      Carp 0
+      Cwd 0
+      Data::Dumper 0
+      ExtUtils::MakeMaker 0
+      Fcntl 0
+      IO::Handle 0
+      IO::Select 0
+      IPC::Run 0
+      List::Util 0
+      POSIX 0
+      Pod::Coverage::TrustPod 0
+      Scalar::Util 0
+      Symbol 0
+      Test::CPAN::Meta 0
+      Test::Pod 0
+      Test::Pod::Coverage 0
+      constant 0
+      perl 5.006
+      strict 0
+      warnings 0
   Teng-0.32
     pathname: S/SA/SATOH/Teng-0.32.tar.gz
     provides:
@@ -2322,6 +2799,18 @@ DISTRIBUTIONS
       Scalar::Util 0
       parent 0
       perl 5.008_001
+  Test-CPAN-Meta-0.25
+    pathname: B/BA/BARBIE/Test-CPAN-Meta-0.25.tar.gz
+    provides:
+      Test::CPAN::Meta 0.25
+      Test::CPAN::Meta::Version 0.25
+    requirements:
+      ExtUtils::MakeMaker 0
+      IO::File 0
+      Parse::CPAN::Meta 0.02
+      Test::Builder 0
+      Test::Builder::Tester 0
+      Test::More 0.70
   Test-Deep-1.130
     pathname: R/RJ/RJBS/Test-Deep-1.130.tar.gz
     provides:
@@ -2417,6 +2906,28 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 0
       Test::Builder 0.12
       Test::Builder::Tester 1.04
+  Test-Pod-1.52
+    pathname: E/ET/ETHER/Test-Pod-1.52.tar.gz
+    provides:
+      Test::Pod 1.52
+    requirements:
+      ExtUtils::MakeMaker 0
+      File::Find 0
+      Pod::Simple 3.05
+      Test::Builder::Tester 1.02
+      Test::More 0.62
+      perl 5.008
+  Test-Pod-Coverage-1.10
+    pathname: N/NE/NEILB/Test-Pod-Coverage-1.10.tar.gz
+    provides:
+      Test::Pod::Coverage 1.10
+    requirements:
+      ExtUtils::MakeMaker 0
+      Pod::Coverage 0
+      Test::Builder 0
+      perl 5.006
+      strict 0
+      warnings 0
   Test-Requires-0.11
     pathname: T/TO/TOKUHIROM/Test-Requires-0.11.tar.gz
     provides:

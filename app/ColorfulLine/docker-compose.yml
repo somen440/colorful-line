@@ -11,13 +11,19 @@ services:
     image: satoya2041/perl:v0.0.2
     volumes:
       - ./:/app
+    environment:
+      DB_NAME: colorful
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_USER: test
+      DB_PASSWORD: test
     ports:
       - "5000:5000"
     command: ["carton", "exec", "--", "plackup", "-Ilib", "-R", "./lib", "--access-log", "/dev/null", "-a", "script/colorfulline-server"]
   db:
     image: mysql:5.7
     ports:
-      - 30300:3306
+      - 30302:3306
     volumes:
       - ../../build/mysql/conf.d:/etc/mysql/conf.d
       - ./log/mysql:/var/log/mysql

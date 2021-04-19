@@ -2,8 +2,23 @@
 
 : override content -> {
 
-<h1 style="padding: 70px; text-align: center; font-size: 80px; line-height: 1; letter-spacing: -2px;">Dashboard</h1>
+<hr />
 
-<p><: $text :></p>
+<ul class="list-group">
+: for $colors -> $color {
+  <li class="list-group-item" style="background-color: <: $color.value :>"></li>
+: }
+</ul>
+
+<hr />
+
+<form class="form-inline" method="POST" action="<: uri_for('/post') :>">
+  <div class="form-group">
+    <input class="color-input form-control" name="color" data-huebee />
+  </div>
+  <button type="submit" class="btn btn-default">登録</button>
+</form>
+
+: include "include/pager.tx"
 
 : }
